@@ -1,0 +1,242 @@
+<html>
+    <head>
+        <link rel="icon" href="pmbok.png">
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <script src="script.js"></script>
+        <title>ホームカミング脱出</title>
+    </head>
+    <body>
+        <!--hint---------------------------------------------------------------------->
+        <div id="hint" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('hint').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>Hint</h2>
+                </div>
+                
+                <div class="container">
+                    <details>
+                        <summary>謎1</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎2</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎3</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎4</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎5</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎6</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎7</summary>
+                        K & E
+                    </details>
+                </div>
+            </form>
+        </div>
+
+        <!--correct---------------------------------------------------------------------->
+        <div id="correct" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('correct').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>正解！</h2>
+                </div>
+            </form>
+        </div>
+
+        <!--incorrect---------------------------------------------------------------------->
+        <div id="incorrect" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('incorrect').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>不正解</h2>
+                </div>
+            </form>
+        </div>
+
+        <!--beginning---------------------------------------------------------------------->
+        <center><h1>あなたは<br>この迷宮から<br>脱出できるか？</h1></center>
+        <center><button name="zero" onclick="document.getElementById('q1').style.display = 'block'"><h2>脱出開始！</h2></button></center>
+
+        <!--q1---------------------------------------------------------------------->
+        <div id="q1" name="question" style="display:none;">
+            <center><h2>謎を解いて答えを入力せよ</h2></center>
+
+            <center><button name="one" onclick="document.getElementById('id1').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q1answer" name="q1answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(1,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id1" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id1').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎1</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q2---------------------------------------------------------------------->
+        <div id="q2" name="question" style="display:none;">
+            <center><button name="two" onclick="document.getElementById('id2').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q2answer" name="q2answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(2,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id2" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id2').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎2</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q3---------------------------------------------------------------------->
+        <div id="q3" name="question" style="display:none;">
+            <center><button name="three" onclick="document.getElementById('id3').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q3answer" name="q3answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(3,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id3" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id3').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎3</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q4---------------------------------------------------------------------->
+        <div id="q4" name="question" style="display:none;">
+            <center><button name="four" onclick="document.getElementById('id4').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q4answer" name="q4answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(4,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id4" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id4').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎4</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q5---------------------------------------------------------------------->
+        <div id="q5" name="question" style="display:none;">
+            <center><button name="five" onclick="document.getElementById('id5').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q5answer" name="q5answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(5,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id5" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id5').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎5</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q6---------------------------------------------------------------------->
+        <div id="q6" name="question" style="display:none;">
+            <center><button name="six" onclick="document.getElementById('id6').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q6answer" name="q6answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(6,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id6" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id6').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎6</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--q7---------------------------------------------------------------------->
+        <div id="q7" name="question" style="display:none;">
+            <center><button name="seven" onclick="document.getElementById('id7').style.display='block'"></button></center>
+            
+            <center><input type="text" placeholder="回答を入力" id="q7answer" name="q7answer" required></center>
+            <center><button name="hint" onclick="document.getElementById('hint').style.display='block'">Hint</button><button name="submit" onclick="check(7,['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ'])">解答</button></center>
+            
+            <div id="id7" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id7').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <h2>謎7</h2>
+                    </div>
+                    
+                    <div class="container">
+                        <a>K & E</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        
+        <!--clear---------------------------------------------------------------------->
+        <div id="q8" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('q8').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>CLEAR!!</h2>
+                </div>
+            </form>
+        </div>
+        <br>
+    </body>
+</html>
