@@ -3,7 +3,6 @@ function check(num, answers) {
     if (answers.includes(input)) {
         document.getElementById('correct').style.display='block';
         document.getElementById(`q${num + 1}`).style.display = "block";
-        document.getElementById(`q${num}`).style.display = "none";
     } else {
         document.getElementById('incorrect').style.display='block';
     }

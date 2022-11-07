@@ -132,8 +132,7 @@ span.psw {
 }
 
 .modal[id$="correct"],[id^="id"] {
-  padding-top: 50%;
-  zoom: 100%;
+  padding-top: 70%;
 }
 
 /* Modal Content/Box */
