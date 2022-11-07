@@ -1,182 +1,193 @@
-<!DOCTYPE html>
 <html>
     <head>
         <link rel="icon" href="pmbok.png">
-        <title>quiz</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            body {font-family: Arial, Helvetica, sans-serif;}
-            
-            /* Full-width input fields */
-            input[type=text], input[type=password] {
-              width: 30%;
-              padding: 12px 20px;
-              display: inline-block;
-              border: 1px solid #ccc;
-              box-sizing: border-box;
-            }
-            
-            button {
-              color: white;
-              padding: 14px 20px;
-              border: none;
-              cursor: pointer;
-              width: 30%;
-              height: 100px;
-              margin: 1.5%;
-            }
-            
-            button[name="one"] {background-color: YellowGreen;}
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 
-            button[name="two"] {background-color: PaleGoldenRod;}
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            function contents(num, btnName, answerArray, imgName) {
+                var divId = "q" + num;
+                var id = "id" + num;
+                var answer = "q" + num + "answer";
 
-            button[name="three"] {background-color: LightSalmon;}
+                $(document).ready(function(){
+                    $('.q' + num).html(
+                    "<div id=" + divId + " name=\"question\" style=\"display:none;\">" +
+                        "<center><button name=" + btnName + " onclick=\"document.getElementById(\'" + id + "\').style.display=\'block\'\"></button></center>" +
+                        
+                        "<center><input type=\"text\" placeholder=\"回答を入力\" id=" + answer + " required></center>" +
+                        "<center><button name=\"hint\" onclick=\"document.getElementById(\'hint\').style.display=\'block\'\">Hint</button><button name=\"submit\" onclick=\"check(" + num + "," + answerArray + ")\">解答</button></center>" +
+                        
+                        "<div id=" + id + " class=\"modal\">" +
+                            "<form class=\"modal-content animate\" action=\"/action_page.php\" method=\"post\">" +
+                                "<div class=\"imgcontainer\">" +
+                                    "<span onclick=\"document.getElementById(\'" + id + "\').style.display=\'none\'\" class=\"close\" title=\"Close Modal\">&times;</span>" +
+                                    "<h2>謎" + num + "</h2>" +
+                                "</div>" +
+                                
+                                "<div class=\"container\">" +
+                                    "<img src=" + imgName + " style=\"width:100%;height:auto;\">" +
+                                "</div>" +
+                            "</form>" +
+                        "</div>" +
+                    "</div>" +
+                    "<br>"
+                    );
+                });
+            };
+        </script>
 
-            button[name="four"] {background-color: CornFlowerBlue;}
-
-            button[name="five"] {background-color: DimGrey;}
-
-            button[name="six"] {background-color: Crimson;}
-
-            button[name="seven"] {background-color: DarkCyan;}
-
-            button[name="eight"] {background-color: Indigo; }
-
-            button[name="nine"] {background-color: Violet;}
-
-            button[name="sound"] {background: rgba(0,0,0,0.0);}
-
-            button[name="submit"] {
-                background-color: #04AA6D;
-                height: 40px;
-            }
-
-            /* Center the image and position the close button */
-            .imgcontainer {
-              text-align: center;
-              margin: 24px 0 12px 0;
-              position: relative;
-            }
-            
-            .container {
-              text-align: center;
-              padding: 16px;
-            }
-            
-            span.psw {
-              float: right;
-              padding-top: 16px;
-            }
-            
-            /* The Modal (background) */
-            .modal {
-              display: none; /* Hidden by default */
-              position: fixed; /* Stay in place */
-              z-index: 1; /* Sit on top */
-              left: 0;
-              top: 0;
-              width: 100%; /* Full width */
-              height: 100%; /* Full height */
-              overflow: auto; /* Enable scroll if needed */
-              background-color: rgb(0,0,0); /* Fallback color */
-              background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-              padding-top: 60px;
-            }
-            
-            /* Modal Content/Box */
-            .modal-content {
-              background-color: #fefefe;
-              margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-              border: 1px solid #888;
-              width: 80%; /* Could be more or less, depending on screen size */
-            }
-            
-            /* The Close Button (x) */
-            .close {
-              position: absolute;
-              right: 25px;
-              top: 0;
-              color: #000;
-              font-size: 35px;
-              font-weight: bold;
-            }
-            
-            .close:hover,
-            .close:focus {
-              color: red;
-              cursor: pointer;
-            }
-            
-            /* Add Zoom Animation */
-            .animate {
-              -webkit-animation: animatezoom 0.6s;
-              animation: animatezoom 0.6s
-            }
-            
-            @-webkit-keyframes animatezoom {
-              from {-webkit-transform: scale(0)} 
-              to {-webkit-transform: scale(1)}
-            }
-              
-            @keyframes animatezoom {
-              from {transform: scale(0)} 
-              to {transform: scale(1)}
-            }
-            
-            /* Change styles for span and cancel button on extra small screens */
-            @media screen and (max-width: 300px) {
-              span.psw {
-                 display: block;
-                 float: none;
-              }
-            }
-        </style>
+        <title>ホームカミング脱出</title>
     </head>
     <body>
-
-        <center><h2>謎を解いて答えを入力せよ</h2></center>
-        
-        <button name="one" onclick="document.getElementById('id01').style.display='block'"></button><button name="two" onclick="document.getElementById('id01').style.display='block'"></button><button name="three" onclick="document.getElementById('id01').style.display='block'"></button><br>
-        <button name="four" onclick="document.getElementById('id01').style.display='block'"></button><button name="five" onclick="document.getElementById('id01').style.display='block'"></button><button name="six" onclick="document.getElementById('id01').style.display='block'"></button><br>
-        <button name="seven" onclick="document.getElementById('id01').style.display='block'"></button><button name="eight" onclick="document.getElementById('id01').style.display='block'"></button><button name="nine" onclick="document.getElementById('id01').style.display='block'"></button><br>
-
-        <center><p id="result"></p></center><br>
-        <script>
-            function changeClicked() {
-                var input = document.getElementById("answer").value;
-                if (input === "candy"|| input === "キャンディ" || input === "キャンディー"|| input ==="きゃんでぃー "|| input ==="きゃんでぃ") {
-                    window.location = 'b.html';
-                } else {
-                    document.getElementById("result").innerHTML = "答えが違います";
-                }
-            }
-        </script>
-        <center><input type="text" placeholder="回答を入力する" id="answer" name="answer" required><br><button name="submit" onclick="changeClicked()">送信</button></center>
-
-        <div id="id01" class="modal">
-          <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <h2>謎1</h2>
-            </div>
-        
-            <div class="container" style="background-color:#f1f1f1">
-              <a>K & E</a>
-            </div>
-          </form>
+        <!--hint---------------------------------------------------------------------->
+        <div id="hint" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('hint').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>Hint</h2>
+                </div>
+                
+                <div class="container">
+                    <details>
+                        <summary>謎1</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎2</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎3</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎4</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎5</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎6</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎7</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎8</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎9</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎10</summary>
+                        K & E
+                    </details><br>
+                    <details>
+                        <summary>謎11</summary>
+                        K & E
+                    </details><br>
+                </div>
+            </form>
         </div>
-        
+
+        <!--correct---------------------------------------------------------------------->
+        <div id="correct" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('correct').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h1>正解！</h1>
+                </div>
+            </form>
+        </div>
+
+        <!--incorrect---------------------------------------------------------------------->
+        <div id="incorrect" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('incorrect').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h1>不正解</h1>
+                </div>
+            </form>
+        </div>
+
+        <!--beginning---------------------------------------------------------------------->
+        <center><h1>あなたは<br>この迷宮から<br>脱出できるか？</h1><br>
+        <h2>謎を解いて答えを入力せよ</h2></center>
+        <center><button name="zero" onclick="document.getElementById('q1').style.display = 'block'"><h2>脱出開始！</h2></button></center>
+
+        <div class="q1"></div>
         <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+            contents(1, "one", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
         </script>
-    
+
+        <div class="q2"></div>
+        <script>
+            contents(2, "two", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q3"></div>
+        <script>
+            contents(3, "three", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q4"></div>
+        <script>
+            contents(4, "four", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q5"></div>
+        <script>
+            contents(5, "five", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q6"></div>
+        <script>
+            contents(6, "six", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q7"></div>
+        <script>
+            contents(7, "seven", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q8"></div>
+        <script>
+            contents(8, "eight", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q9"></div>
+        <script>
+            contents(9, "nine", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q10"></div>
+        <script>
+            contents(10, "ten", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <div class="q11"></div>
+        <script>
+            contents(11, "eleven", "['candy', 'キャンディ', 'キャンディー', 'きゃんでぃー', 'きゃんでぃ']", "pmbok.png");
+        </script>
+        
+        <!--clear---------------------------------------------------------------------->
+        <div id="q12" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('q12').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <h2>CLEAR!!</h2>
+                </div>
+            </form>
+        </div>
+        <br>
     </body>
 </html>
