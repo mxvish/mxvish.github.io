@@ -19,51 +19,51 @@ button {
 }
 
 button[name="zero"] {
-    background-color: Brown;
+    background-color: #4682b4;
 }
 
 button[name="one"] {
-    background-color: YellowGreen;
+    background-color: #e9967a;
 }
 
 button[name="two"] {
-	background-color: PaleGoldenRod;
+	background-color: #800080;
 }
 
 button[name="three"] {
-	background-color: LightSalmon;
+	background-color: #db7093;
 }
 
 button[name="four"] {
-	background-color: CornFlowerBlue;
+	background-color: #20b2aa;
 }
 
 button[name="five"] {
-	background-color: DimGrey;
+	background-color: #66cdaa;
 }
 
 button[name="six"] {
-	background-color: Crimson;
+	background-color: #ffc0cb;
 }
 
 button[name="seven"] {
-	background-color: DarkCyan;
+	background-color: #f5deb3;
 }
 
 button[name="eight"] {
-	background-color: Indigo; 
+	background-color: #f4af60; 
 }
 
 button[name="nine"] {
-	background-color: Violet;
+	background-color: #ffdab9;
 }
 
 button[name="ten"] {
-	background-color: DarkOrange;
+	background-color: #ffb6c1;
 }
 
 button[name="eleven"] {
-	background-color: #FFE4E1;
+	background-color: #ffe4e1;
 }
 
 button[name="hint"] {
