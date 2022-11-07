@@ -131,8 +131,9 @@ span.psw {
   background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
-.modal[id$="correct"] {
+.modal[id$="correct"],[id^="id"] {
   padding-top: 50%;
+  zoom: 100%;
 }
 
 /* Modal Content/Box */
