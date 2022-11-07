@@ -103,6 +103,7 @@ div[name="question"] {
   margin: 24px 0 12px 0;
   position: relative;
   width: auto;
+  height: 60px;
 }
 
 .container {
