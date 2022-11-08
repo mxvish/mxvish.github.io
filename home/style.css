@@ -131,7 +131,7 @@ span.psw {
   background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
-.modal[id$="correct"],[id^="id"] {
+.modal[id$="correct"],[id^="id"],[id="q8"] {
   padding-top: 70%;
 }
 
