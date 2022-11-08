@@ -1,7 +1,7 @@
 function check(num, answers) {
     var input = document.getElementById("q" + num + "answer").value.toString();
     if (answers.includes(input)) {
-        if (num < 8) {
+        if (num < 7) {
             document.getElementById('correct').style.display='block';
         }
         document.getElementById(`q${num + 1}`).style.display = "block";
