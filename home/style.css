@@ -1,4 +1,7 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    background-image: url("ginghamCheck.png");
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 /* Full-width input fields */
 input[type=text] {
