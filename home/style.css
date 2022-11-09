@@ -1,7 +1,7 @@
 body {
     background: url(ginghamCheck.png);
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
 }
 
