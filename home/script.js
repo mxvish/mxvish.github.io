@@ -3,7 +3,7 @@ function check(num, answers) {
     if (answers.includes(input)) {
         if (num < 7) {
             document.getElementById('correct').style.display='block';
-        } else if (num == 7) {
+        } else {
             document.body.style.backgroundColor = "#000000";
         }
         document.getElementById(`q${num + 1}`).style.display = "block";
