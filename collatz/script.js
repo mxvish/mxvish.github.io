@@ -9,13 +9,18 @@ function plot(){
 
         xArray = [];
         yArray = [];
+        strArray = [];
 
         let cnt = 1;
         let fourCnt = 0;
 
         while (fourCnt < 2) {
+            if (cnt % 10 == 0) {
+                strArray.push("<br>");
+            }
             xArray.push(cnt);
             yArray.push(num);
+            strArray.push(num);
             if (num %2 == 1) {
                 num = 3*num+1;
             } else {
@@ -40,8 +45,8 @@ function plot(){
         resultStr.innerHTML = "Result | 結果 <br> Slide the page horizontally if necessary <br> 必要があればページを <br> 横にスライドしてください";
         
         var yDataStr = document.getElementById("yData");
-        yArray.pop();
-        yDataStr.innerHTML = yArray;
+        strArray.pop();
+        yDataStr.innerHTML = strArray.join(" ");
     } else {
         alert("Input integer greater than 1. \n 1以上の整数を入力してください。")
     }
