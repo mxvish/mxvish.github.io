@@ -42,7 +42,7 @@ function plot(){
         var titleStr = document.getElementById("title");
         titleStr.innerHTML = "Collatz conjecture starting with " + yArray[0] + "<br>" + yArray[0] + " から始まるコラッツ数列";
         var resultStr = document.getElementById("result");
-        resultStr.innerHTML = "Result | 結果 <br> Slide the page horizontally if necessary <br> 必要があればページを <br> 横にスライドしてください";
+        resultStr.innerHTML = "Result | 結果";
         
         var yDataStr = document.getElementById("yData");
         strArray.pop();
