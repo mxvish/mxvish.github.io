@@ -48,6 +48,6 @@ function plot(){
         strArray.pop();
         yDataStr.innerHTML = strArray.join(" ");
     } else {
-        alert("Input integer greater than 1. \n 1以上の整数を入力してください。")
+        alert("Input integer equals to or greater than 1. \n 1以上の整数を入力してください。")
     }
 }
