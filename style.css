@@ -2,13 +2,34 @@ body {
 	font-family:Tahoma;
 	text-align:center;	
 }
+nav {
+	display:block;
+}
 ul {
 	display:table;
 	margin:0 auto;
 }
 h1 {
 	font-family:Tahoma;
+	padding:20px;
+}
+img {
+	border:5px solid #20b2aa;
+	border-radius:10%;
+	padding:10px;
+	width:5%;
 }
 p {
 	font-family:Tahoma;
+	padding:40px;
+}
+a {
+	color:black;
+}
+a:hover {
+	color:#20b2aa;
+	background-color:#E1E5F2;
+}
+a:visited {
+	text-decolation:none;
 }
