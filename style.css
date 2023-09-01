@@ -1,10 +1,14 @@
 body {
+	font-family:Tahoma;
 	text-align:center;	
 }
 ul {
 	display:table;
 	margin:0 auto;
 }
-style {
+h1 {
+	font-family:Tahoma;
+}
+p {
 	font-family:Tahoma;
 }
