@@ -41,6 +41,9 @@ a:visited {
 	text-decolation:none;
 }
 #number {
-	background-color: #20b2aa;
+	background-color: #96EDE7;
 	border: 2px #F0E6EF;
+}
+button {
+	color:#20b2aa;
 }
