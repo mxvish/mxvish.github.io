@@ -45,5 +45,6 @@ a:visited {
 	border: 2px #F0E6EF;
 }
 button {
-	color:#20b2aa;
+	color: white;
+	background-color:#20b2aa;
 }
