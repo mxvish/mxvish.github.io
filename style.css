@@ -36,7 +36,33 @@ svg {
 	padding:10px;
 	width:5%;
 }
-
+.gallery_img {
+	width: 45%;
+}
+.column {
+	padding: 5px;
+	flex: 50%;
+}
+.row {
+	padding: 10px;	
+	display: flex;
+}
+.img_content {
+	text-align: center;
+	background-color: rgba(31, 173, 166, 0.2);
+	position: absolute;
+	width: 48%;
+	align-items: center;
+	top: 10%;
+	left: 25%;
+	right: 10%;
+	bottom: 10%;
+	/*comment*/
+}
+.container {
+	position: relative;
+	text-align: center;
+}
 p {
 	font-family:Tahoma;
 	padding:40px;
