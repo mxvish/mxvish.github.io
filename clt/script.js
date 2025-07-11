@@ -46,9 +46,7 @@ function plot(){
 				count[k] = 0;
 			}
 			ctx.moveTo(k*c.width/(num*7), c.height);
-			ctx.lineTo(k*c.width/(num*7), -count[k]*2+c.height);
-
-			//ctx.lineTo(k*c.width/(num*7), -count[k]/max*c.height+c.height);
+			ctx.lineTo(k*c.width/(num*7), -count[k]/max*c.height*0.9+c.height);
 			strArray.push(count[k]/n);
 		}
 
