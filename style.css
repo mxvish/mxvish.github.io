@@ -7,7 +7,7 @@ a {
 }
 .header {
 	text-align: center;
-	background: #20b2aa;
+	background: #F7BB7D;
 	color: white;
 	font-size: 80%;
 	box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.3);
@@ -24,14 +24,14 @@ ul {
 	margin:0 auto;
 }
 img {
-	border:5px solid #20b2aa;
+	border:5px solid #F7BB7D;
 	border-radius:10%;
 	padding:10px;
 	width:5%;
 }
 
 svg {
-	border:5px solid #20b2aa;
+	border:5px solid #F7BB7D;
 	border-radius:10%;
 	padding:10px;
 	width:5%;
@@ -68,7 +68,7 @@ p {
 	padding:40px;
 }
 a:hover {
-	color:#20b2aa;
+	color:#F7BB7D;
 	background-color:#E1E5F2;
 }
 a:visited {
@@ -80,5 +80,5 @@ a:visited {
 }
 button {
 	color: white;
-	background-color:#20b2aa;
+	background-color:#F7BB7D;
 }
